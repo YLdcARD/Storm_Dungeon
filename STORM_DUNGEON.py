@@ -140,7 +140,7 @@ while wants_to_play == True:
 
     print(f"Welcome {Brave_Adventurer}!!")
     if Brave_Adventurer == "Rich" or Brave_Adventurer == "Casey" or Brave_Adventurer == "Jesse" or Brave_Adventurer == "Adam":
-        input(f"\ncough WELL this is awkward, new greeting unlocked"
+        input(f"\ncough WELL this is awkward, **new greeting unlocked**"
               f"\nYou are a Noob {Brave_Adventurer} and live on 1234 Happy Street...lulz 'Press Enter'")
 
 
@@ -229,7 +229,6 @@ while wants_to_play == True:
                             |/\/\|    )      (    |/\/\|                        
                             ( (  )                (  ) )
                         """)
-            import winsound
             winsound.PlaySound("Roar.wav", winsound.SND_ASYNC)
 
     response = input("Do you want to fight the GRAND MASTER DRAGON, Hero? (Y/N): ").upper()
@@ -270,6 +269,7 @@ while wants_to_play == True:
                     if dragon_attacks[dragon_choice] == "Razor Wind":
                         print(Fore.LIGHTBLUE_EX, end='')
                     if dragon_attacks[dragon_choice] == "Fire Blast":
+                        winsound.PlaySound("fire.wav", winsound.SND_ASYNC)
                         print(Fore.RED, end='')
                     if dragon_attacks[dragon_choice] == "Ferocious Bite":
                         print(Fore.MAGENTA, end='')
@@ -318,7 +318,7 @@ u$$$$$$$$$$$uu    """""    'uuuu$$$$$$$$$$'
 """)
                     break
             else:
-                print("Invalid choice.")
+                print("You MUST conform to the iputs Rebel.")
 
                 print(Fore.WHITE, end="""Try Again
 
