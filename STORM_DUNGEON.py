@@ -132,24 +132,39 @@ wants_to_play = True
 
 player_class = ""
 
-Tank = Hero + 5  # trying to add 5HP to Tank if a player chooses.
+Tank = Hero + 5 # trying to add 5HP to Tank if a player chooses.
 
 while wants_to_play == True:
 
     Brave_Adventurer = input(f"\nEnter Your Name, Brave Adventurer: ").title()
 
     print(f"Welcome {Brave_Adventurer}!!")
-    # if input(Brave_Adventurer == "Rich or Casey or Jesse or Adam").. print(f"\ncough WELL this is awkward, new greeting unlocked 'press enter'")
+    if Brave_Adventurer == "Rich" or Brave_Adventurer == "Casey" or Brave_Adventurer == "Jesse" or Brave_Adventurer == "Adam":
+        input(f"\ncough WELL this is awkward, new greeting unlocked"
+              f"\nYou are a Noob {Brave_Adventurer} and live on 1234 Happy Street...lulz 'Press Enter'")
 
-    # print(f"\nYou are a Noob on 1234 Happy Steet...LULZ")
 
     while player_class == "":
         print(f"Please Choose your Hero's Class: {' '.join(Class)}")
         player_class = input("Enter your desired Class:").title()
-        player_response = input(f"You choose {player_class}, are you SURE?! (Y/N): ")
-        if (player_response == "N" or player_class not in Class):
+        player_response = input(f"You choose {player_class}, are you SURE?! (Y/N/Info): ").title()
+        if(player_response == "Info"):
+            if player_class == "Tank":
+                print("A Tank is a Hardened WARRIOR")
+            if player_class == "Mage":
+                print("SHABAM")
+            if player_class == "Druid":
+                print("You turned into a cat")
+            if player_class == "Bard":
+                print("You sleep for a living")
+            player_class = ''
+        if (player_response == "N" or  player_class not in Class):
             player_class = ""
         else:
+            if (player_class == "Tank"):
+                Hero += 5
+            if (player_class == "Bard"):
+                Hero -= 105
 
             print(Fore.LIGHTGREEN_EX, end="""                      
                         
@@ -214,8 +229,8 @@ while wants_to_play == True:
                             |/\/\|    )      (    |/\/\|                        
                             ( (  )                (  ) )
                         """)
-        import winsound
-        winsound.PlaySound("Roar.wav", winsound.SND_ASYNC)
+            import winsound
+            winsound.PlaySound("Roar.wav", winsound.SND_ASYNC)
 
     response = input("Do you want to fight the GRAND MASTER DRAGON, Hero? (Y/N): ").upper()
     if (response == "Y"):
@@ -228,6 +243,9 @@ while wants_to_play == True:
     dragon_damage = [12, 7, 10, 4]
     while True:
         if Bad_Guy <= 0:
+            Bad_Guy = 100
+            Hero = 110
+            player_class = ""
             print(
                 Fore.YELLOW + ''f"****{Brave_Adventurer}, you SLAYED the GRAND MASTER DRAGON, EPIC!!****" + Style.RESET_ALL)
             input("\n Press Enter to Return to Start: ")
@@ -238,10 +256,14 @@ while wants_to_play == True:
                 if Hero > 0:
                     weapons_cart.append(player_choice)
                     if player_choice == "Harp":
+                        winsound.PlaySound("Harp.wav", winsound.SND_ASYNC)
                         print(
                             Fore.LIGHTRED_EX + "WARNING You put yourself to SLEEP, the Dragon heals itself!!" + Style.RESET_ALL)
                     elif player_choice == "Axe":
+                        winsound.PlaySound("daggerwoosh.wav", winsound.SND_ASYNC)
                         print(Fore.YELLOW, end="\nMASTER DRAGON SCREECHES AS IT BLEEDS IN AGONY!")
+                    elif player_choice == "Sword":
+                        winsound.PlaySound("metalsword.wav", winsound.SND_ASYNC)
                     Bad_Guy -= weapons[player_choice] + randrange(-1, 1)
                     dragon_choice = randrange(0, 3)
                     Hero -= dragon_damage[dragon_choice] + randrange(-1, 1)
@@ -252,6 +274,7 @@ while wants_to_play == True:
                     if dragon_attacks[dragon_choice] == "Ferocious Bite":
                         print(Fore.MAGENTA, end='')
                     if dragon_attacks[dragon_choice] == "Spiked Tail Whip":
+                        winsound.PlaySound("metalsword.wav", winsound.SND_ASYNC)
                         print(Fore.YELLOW, end='')
                     print(
                         f"\nMASTER DRAGON hit you with: {dragon_attacks[dragon_choice]} for {dragon_damage[dragon_choice]} damage" + Style.RESET_ALL)
@@ -259,7 +282,12 @@ while wants_to_play == True:
                     print(f"Hero HP: {Hero}")
                 else:
                     print(Fore.LIGHTRED_EX, end="\n****DEATH HAS OVERCOME YOUR FRAIL CAUSE****")
+
+                    Bad_Guy = 100
+                    Hero = 110
+                    player_class = ""
                     print(Fore.LIGHTWHITE_EX, end="""\n
+                    
                     
              uu$$$$$$$$$$$uu
           uu$$$$$$$$$$$$$$$$$uu
@@ -279,14 +307,16 @@ while wants_to_play == True:
  u$$$$        $$$$$u$u$u$$$       u$$$$
   $$$$$uu      "$$$$$$$$$"     uu$$$$$$
 u$$$$$$$$$$$uu    """""    'uuuu$$$$$$$$$$'
-                                                  '$$$$"""$$$$$$$$$$uuu   uu$$$$$$$$$''$$$'
-                                                  """      ""$$$$$$$$$$$uu ""$$$$$$'
+'$$$$"""'
+'$$$$$$$$$$uuu   uu$$$$$$$$$''$$$'
+"""      ""$$$$$$$$$$$uu ""$$$$$$'
   'u$$$uuu$$$$$$$$$uu $$$$$$$$$$$uuu$$$
   '$$$$$$$$$$              $$$$$$$$$$$'
    "$$$$$"                      '$$$$'
      '$$$'                         '$$$$'
                                         
 """)
+                    break
             else:
                 print("Invalid choice.")
 
@@ -388,4 +418,6 @@ i8 788888       [88888^^ ooo ^^^^^;;77888^^^^;;7787^^^^ ^^;;;;  iiii;i78888888
                                               ]8888888^iiiiiiiii^888888]
                                                 iiiiiiiiiiiiiiiiiiiiii
                                                     ^^^^^^^^^^^^^""")
+
+
 input("\nPress Enter to exit this code")
