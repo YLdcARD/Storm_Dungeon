@@ -141,10 +141,8 @@ while wants_to_play == True:
 
     print(f"Welcome {Brave_Adventurer}!!")
     if Brave_Adventurer == "Rich" or Brave_Adventurer == "Casey" or Brave_Adventurer == "Jesse" or Brave_Adventurer == "Adam":
-        input(f"\ncough WELL this is awkward, **new greeting unlocked**"
+        input(f"\n**cough** WELL...this is awkward, **new greeting unlocked**"
               f"\nYou are a Noob {Brave_Adventurer} and live on 1234 Happy Street...lulz 'Press Enter'")
-
-
     while player_class == "":
         print(f"Please Choose your Hero's Class: {' '.join(Class)}")
         player_class = input("Enter your desired Class:").title()
@@ -257,7 +255,6 @@ while wants_to_play == True:
                     weapons_cart.append(player_choice)
                     if player_choice == "Harp":
                         winsound.PlaySound("Harp.wav", winsound.SND_ASYNC)
-                        time.sleep(.1)
                         print(
                             Fore.LIGHTRED_EX + "WARNING You put yourself to SLEEP, the Dragon heals itself!!" + Style.RESET_ALL)
                     elif player_choice == "Axe":
