@@ -2,6 +2,7 @@
 from _ast import For
 
 # ctrl shift A
+import time
 
 from random import randrange
 from colorama import Fore, Back, Style
@@ -256,6 +257,7 @@ while wants_to_play == True:
                     weapons_cart.append(player_choice)
                     if player_choice == "Harp":
                         winsound.PlaySound("Harp.wav", winsound.SND_ASYNC)
+                        time.sleep(.1)
                         print(
                             Fore.LIGHTRED_EX + "WARNING You put yourself to SLEEP, the Dragon heals itself!!" + Style.RESET_ALL)
                     elif player_choice == "Axe":
@@ -318,7 +320,7 @@ u$$$$$$$$$$$uu    """""    'uuuu$$$$$$$$$$'
 """)
                     break
             else:
-                print("You MUST conform to the iputs Rebel.")
+                print("You MUST conform to the inputs Rebel!!")
 
                 print(Fore.WHITE, end="""Try Again
 
