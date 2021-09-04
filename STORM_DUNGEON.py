@@ -32,7 +32,7 @@ print(Fore.LIGHTYELLOW_EX, end="""
 ::: ##:::: ##:::: ##: ##:::. ##: ########::::::::. ######::
 :::..:::::..:::::..::..:::::..::........::::::::::......:::
 """)
-
+time.sleep(1)
 print(Fore.LIGHTBLACK_EX, end="""                   :                                                                                                                :                    
            .              t#,                                                     E#Wi         :      L.                                 ,;    t#,     L.            
           ;W             ;##W.   j.                                               E###G.       Ef     EW:        ,ft         .Gt       f#i    ;##W.    EW:        ,ft
@@ -49,6 +49,7 @@ print(Fore.LIGHTBLACK_EX, end="""                   :                           
   ,               :                                 j                             E#t          :                  fE          ;;                                   fE
                                                                                   L:                               ,                                                ,
 """)
+time.sleep(1.5)
 print(Fore.WHITE, end="""
          ___(                       )
         (                          _)
@@ -64,8 +65,8 @@ print(Fore.YELLOW, end="""
        /__/
       //
      /""")
+time.sleep(2)
 print(Fore.LIGHTWHITE_EX, end="""
-
 
 _____________________________________________________________
  /|     -_-                                             _-  |
@@ -114,7 +115,7 @@ _____________________________________________________________
      ``----....(','
             _,'>'
             )/  """)
-
+time.sleep(1)
 print(Fore.YELLOW + "University of Michigan Project" + Style.RESET_ALL)
 
 # BG's HP
@@ -133,7 +134,7 @@ wants_to_play = True
 
 player_class = ""
 
-Tank = Hero + 5 # trying to add 5HP to Tank if a player chooses.
+Tank = Hero + 5  # trying to add 5HP to Tank if a player chooses.
 
 while wants_to_play == True:
 
