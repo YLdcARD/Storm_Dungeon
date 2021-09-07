@@ -152,11 +152,11 @@ while wants_to_play == True:
         player_response = input(f"You choose {player_class}, are you SURE?! (Y/N/Info): ").title()
         if(player_response == "Info"):
             if player_class == "Tank":
-                print("A Tank is a Hardened WARRIOR")
+                print("A Tank is a Hardened WARRIOR. A tank is a character whose primary purpose or class role is to absorb damage and prevent others from being attacked. Tanks are "meat shields", so to speak, putting themselves between the mobs and the more vulnerable party members. The tank's task is to hold aggro of the mobs to keep them off the other group members.")
             if player_class == "Mage":
-                print("SHABAM")
+                print("Magic is a tool, some would even say a gift. But you should never forget its fundamental nature. Arcane magic twists the boundaries of our world. It weakens the laws of this realm to allow the impossible to happen, if only for a moment. That single moment is all a demon needs to wreak havoc. The Burning Legion has watched us for millenia, always waiting for the smallest rift to slip through, the smallest stirring to whisper from. Remember this, young ones. Every spell you cast, no matter how minor, cuts both ways. This is why sorcery must never be used frivolously.")
             if player_class == "Druid":
-                print("You turned into a cat")
+                print("Druids harness the vast powers of nature to preserve balance and protect life. With experience, druids can unleash nature's raw energy against their enemies, raining celestial fury on them from a great distance, binding them with enchanted vines, or ensnaring them in unrelenting cyclones.")
             if player_class == "Bard":
                 print("You sleep for a living")
             player_class = ''
