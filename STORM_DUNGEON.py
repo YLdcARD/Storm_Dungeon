@@ -241,7 +241,7 @@ while wants_to_play == True:
     else:
         print("And You called yourself a HERO?!")
         break
-    weapons = {"Bow": 5, "Sword": 10, "Axe": 20, "Dagger": .5, "Harp": 0}
+    weapons = {"Bow": 5, "Sword": 10, "Axe": 20, "Dagger": .5, "Harp": 0, "Potion": 0}
     dragon_attacks = ["Fire Blast", "Razor Wind", "Ferocious Bite", "Spiked Tail Whip"]
     dragon_damage = [12, 7, 10, 4]
     while True:
@@ -267,6 +267,8 @@ while wants_to_play == True:
                         print(Fore.YELLOW, end="\nMASTER DRAGON SCREECHES AS IT BLEEDS IN AGONY!")
                     elif player_choice == "Sword":
                         winsound.PlaySound("metalsword.wav", winsound.SND_ASYNC)
+                    elif player_choice == "Potion":
+                        Hero = + 100
                     Bad_Guy -= weapons[player_choice] + randrange(-1, 1)
                     dragon_choice = randrange(0, 3)
                     Hero -= dragon_damage[dragon_choice] + randrange(-1, 1)
